@@ -6,7 +6,10 @@
          contextName = "mach_msg_trap:(null)">
          <PersistentStrings>
             <PersistentString
-               value = "[[OperationQueue ma_sharedQueue] operations]">
+               value = "[NSOperationQueue ma_sharedQueue2]">
+            </PersistentString>
+            <PersistentString
+               value = "[[NSOperationQueue ma_sharedQueue2] operations]">
             </PersistentString>
             <PersistentString
                value = "[OperationQueue ma_sharedQueue]">

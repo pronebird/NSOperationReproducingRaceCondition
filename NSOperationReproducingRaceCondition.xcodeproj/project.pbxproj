@@ -16,6 +16,8 @@
 		58DA31F51CBA80A200D98187 /* Operation.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DA31F41CBA80A200D98187 /* Operation.m */; };
 		58DA31F81CBA821D00D98187 /* BlockOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DA31F71CBA821D00D98187 /* BlockOperation.m */; };
 		58DA31FB1CBA8CBB00D98187 /* OperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DA31FA1CBA8CBB00D98187 /* OperationQueue.m */; };
+		58DA31FE1CBADF5700D98187 /* Operation2.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DA31FD1CBADF5700D98187 /* Operation2.m */; };
+		58DA32011CBADFAE00D98187 /* BlockOperation2.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DA32001CBADFAE00D98187 /* BlockOperation2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,10 @@
 		58DA31F71CBA821D00D98187 /* BlockOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockOperation.m; sourceTree = "<group>"; };
 		58DA31F91CBA8CBB00D98187 /* OperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationQueue.h; sourceTree = "<group>"; };
 		58DA31FA1CBA8CBB00D98187 /* OperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationQueue.m; sourceTree = "<group>"; };
+		58DA31FC1CBADF5700D98187 /* Operation2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Operation2.h; sourceTree = "<group>"; };
+		58DA31FD1CBADF5700D98187 /* Operation2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Operation2.m; sourceTree = "<group>"; };
+		58DA31FF1CBADFAE00D98187 /* BlockOperation2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockOperation2.h; sourceTree = "<group>"; };
+		58DA32001CBADFAE00D98187 /* BlockOperation2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockOperation2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,8 @@
 		58DA31DB1CBA809000D98187 /* NSOperationReproducingRaceCondition */ = {
 			isa = PBXGroup;
 			children = (
+				58DA32021CBADFDC00D98187 /* Operation controlling readiness */,
+				58DA32031CBADFF000D98187 /* Operation *not* controlling readiness */,
 				58DA31DF1CBA809000D98187 /* AppDelegate.h */,
 				58DA31E01CBA809000D98187 /* AppDelegate.m */,
 				58DA31E21CBA809000D98187 /* ViewController.h */,
@@ -76,12 +84,6 @@
 				58DA31EA1CBA809000D98187 /* LaunchScreen.storyboard */,
 				58DA31ED1CBA809000D98187 /* Info.plist */,
 				58DA31DC1CBA809000D98187 /* Supporting Files */,
-				58DA31F31CBA80A200D98187 /* Operation.h */,
-				58DA31F41CBA80A200D98187 /* Operation.m */,
-				58DA31F61CBA821D00D98187 /* BlockOperation.h */,
-				58DA31F71CBA821D00D98187 /* BlockOperation.m */,
-				58DA31F91CBA8CBB00D98187 /* OperationQueue.h */,
-				58DA31FA1CBA8CBB00D98187 /* OperationQueue.m */,
 			);
 			path = NSOperationReproducingRaceCondition;
 			sourceTree = "<group>";
@@ -92,6 +94,30 @@
 				58DA31DD1CBA809000D98187 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		58DA32021CBADFDC00D98187 /* Operation controlling readiness */ = {
+			isa = PBXGroup;
+			children = (
+				58DA31F31CBA80A200D98187 /* Operation.h */,
+				58DA31F41CBA80A200D98187 /* Operation.m */,
+				58DA31F61CBA821D00D98187 /* BlockOperation.h */,
+				58DA31F71CBA821D00D98187 /* BlockOperation.m */,
+				58DA31F91CBA8CBB00D98187 /* OperationQueue.h */,
+				58DA31FA1CBA8CBB00D98187 /* OperationQueue.m */,
+			);
+			name = "Operation controlling readiness";
+			sourceTree = "<group>";
+		};
+		58DA32031CBADFF000D98187 /* Operation *not* controlling readiness */ = {
+			isa = PBXGroup;
+			children = (
+				58DA31FC1CBADF5700D98187 /* Operation2.h */,
+				58DA31FD1CBADF5700D98187 /* Operation2.m */,
+				58DA31FF1CBADFAE00D98187 /* BlockOperation2.h */,
+				58DA32001CBADFAE00D98187 /* BlockOperation2.m */,
+			);
+			name = "Operation *not* controlling readiness";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,7 +192,9 @@
 			files = (
 				58DA31E41CBA809000D98187 /* ViewController.m in Sources */,
 				58DA31E11CBA809000D98187 /* AppDelegate.m in Sources */,
+				58DA32011CBADFAE00D98187 /* BlockOperation2.m in Sources */,
 				58DA31F81CBA821D00D98187 /* BlockOperation.m in Sources */,
+				58DA31FE1CBADF5700D98187 /* Operation2.m in Sources */,
 				58DA31DE1CBA809000D98187 /* main.m in Sources */,
 				58DA31F51CBA80A200D98187 /* Operation.m in Sources */,
 				58DA31FB1CBA8CBB00D98187 /* OperationQueue.m in Sources */,
@@ -318,6 +346,7 @@
 				58DA31F21CBA809000D98187 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
