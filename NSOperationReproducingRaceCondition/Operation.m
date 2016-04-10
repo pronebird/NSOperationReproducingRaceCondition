@@ -108,27 +108,29 @@ NSString *NSStringFromOperationState(OperationState state)
 }
 
 - (BOOL)isReady {
-    switch(self.state) {
-            
-        case OperationStateInitialized:
-            return [self isCancelled];
-            
-        case OperationStatePending:
-            if ([self isCancelled]) {
-                return YES;
-            }
-            
-            if([super isReady]) {
-                [self evaluateConditions];
-            }
-            
-            return NO;
-            
-        case OperationStateReady:
-            return [super isReady] || [self isCancelled];
-            
-        default:
-            return NO;
+    @synchronized (self) {
+        switch(self.state) {
+                
+            case OperationStateInitialized:
+                return [self isCancelled];
+                
+            case OperationStatePending:
+                if ([self isCancelled]) {
+                    return YES;
+                }
+                
+                if([super isReady]) {
+                    [self evaluateConditions];
+                }
+                
+                return NO;
+                
+            case OperationStateReady:
+                return [super isReady] || [self isCancelled];
+                
+            default:
+                return NO;
+        }
     }
 }
 
